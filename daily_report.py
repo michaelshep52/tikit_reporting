@@ -86,6 +86,7 @@ def generate_it_daily_report(active, closed):
         closed_count = len(assignee_tickets[assignee_tickets['Status_Type'] == 'Closed'])
         
         summary_data.append({
+            'Date' : pd.Timestamp.now().strftime('%m-%d-%Y'),
             'Assignee': assignee,
             'Active Tickets': active_count,
             'Closed (Last 7 Days)': closed_count,
